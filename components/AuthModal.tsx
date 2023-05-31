@@ -21,7 +21,7 @@ export const AuthModal = ({}: Props) => {
       router.refresh()
       onClose()
     }
-  })
+  }, [onClose, router, session])
 
   const onChange = (open: boolean) => {
     if (!open) {
