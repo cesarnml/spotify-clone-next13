@@ -39,42 +39,42 @@ export const Header = ({ children, className }: Props) => {
 
   return (
     <div className={twMerge('h-fit bg-gradient-to-b from-emerald-800 p-6', className)}>
-      <div className='w-full mb-4 flex items-center justify-between'>
-        <div className='hidden md:flex gap-x-2 items-center'>
-          <button className='rounded-full bg-black flex items-center justify-center hover:opacity-75 transition'>
-            <RxCaretLeft className='text-white' size={35} onClick={() => router.back()} />
+      <div className="w-full mb-4 flex items-center justify-between">
+        <div className="hidden md:flex gap-x-2 items-center">
+          <button className="rounded-full bg-black flex items-center justify-center hover:opacity-75 transition">
+            <RxCaretLeft className="text-white" size={35} onClick={() => router.back()} />
           </button>
-          <button className='rounded-full bg-black flex items-center justify-center hover:opacity-75 transition'>
-            <RxCaretRight className='text-white' size={35} onClick={() => router.forward()} />
-          </button>
-        </div>
-        <div className='flex md:hidden gap-x-2 items-center'>
-          <button className='rounded-full p-2 bg-white flex items-center justify-center hover:opacity-75 transition'>
-            <HiHome className='text-black' size={20} />
-          </button>
-          <button className='rounded-full p-2 bg-white flex items-center justify-center hover:opacity-75 transition'>
-            <BiSearch className='text-black' size={20} />
+          <button className="rounded-full bg-black flex items-center justify-center hover:opacity-75 transition">
+            <RxCaretRight className="text-white" size={35} onClick={() => router.forward()} />
           </button>
         </div>
-        <div className='flex justify-between items-center gap-x-4'>
+        <div className="flex md:hidden gap-x-2 items-center">
+          <button className="rounded-full p-2 bg-white flex items-center justify-center hover:opacity-75 transition">
+            <HiHome className="text-black" size={20} />
+          </button>
+          <button className="rounded-full p-2 bg-white flex items-center justify-center hover:opacity-75 transition">
+            <BiSearch className="text-black" size={20} />
+          </button>
+        </div>
+        <div className="flex justify-between items-center gap-x-4">
           {user ? (
-            <div className='flex gap-x-4 items-center'>
-              <Button className='bg-white px-6 py-2' onClick={handleLogout}>
+            <div className="flex gap-x-4 items-center">
+              <Button className="bg-white px-6 py-2" onClick={handleLogout}>
                 Logout
               </Button>
-              <Button className='bg-white' onClick={() => router.push('/account')}>
+              <Button className="bg-white" onClick={() => router.push('/account')}>
                 <FaUserAlt />
               </Button>
             </div>
           ) : (
             <>
               <div>
-                <Button className='bg-transparent text-neutral-300 font-medium' onClick={onOpen}>
+                <Button className="bg-transparent text-neutral-300 font-medium" onClick={onOpen}>
                   Sign up
                 </Button>
               </div>
               <div>
-                <Button className='bg-white px-6 py-2' onClick={onOpen}>
+                <Button className="bg-white px-6 py-2" onClick={onOpen}>
                   Login
                 </Button>
               </div>

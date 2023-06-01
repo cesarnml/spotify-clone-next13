@@ -30,13 +30,13 @@ export const AuthModal = ({}: Props) => {
   }
   return (
     <Modal
-      title='Welcome back'
-      description='Login to your account'
+      title="Welcome back"
+      description="Login to your account"
       isOpen={isOpen}
       onChange={onChange}
     >
       <Auth
-        theme='dark'
+        theme="dark"
         magicLink
         providers={['github']}
         supabaseClient={supabaseClient}
