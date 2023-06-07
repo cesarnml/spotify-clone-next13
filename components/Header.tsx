@@ -24,7 +24,6 @@ export const Header = ({ children, className }: Props) => {
 
   const supabaseClient = useSupabaseClient()
   const { user } = useUser()
-  console.log('user:', user)
 
   const handleLogout = async () => {
     const { error } = await supabaseClient.auth.signOut()

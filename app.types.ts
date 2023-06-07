@@ -1,72 +1,17 @@
-import Stripe from 'stripe'
+import { Database } from './db.types'
 
-export type Song = {
-  id: string
-  user_id: string
-  author: string
-  title: string
-  song_path: string
-  image_path: string
-}
+export type Song = Database['public']['Tables']['songs']['Row']
 
-export type Product = {
-  id: string
-  active?: boolean
-  name?: string
-  description?: string
-  image?: string
-  metadata?: Stripe.Metadata
-}
+export type Product = Database['public']['Tables']['products']['Row']
 
-export type Price = {
-  id: string
-  product_id?: string
-  active?: boolean
-  description?: string
-  unit_amount?: number
-  currency?: string
-  type?: Stripe.Price.Type
-  interval?: Stripe.Price.Recurring.Interval
-  interval_count?: number
-  trial_period_days?: number | null
-  metadata?: Stripe.Metadata
-  products?: Product
-}
+export type Price = Database['public']['Tables']['prices']['Row']
 
-export type Customer = {
-  id: string
-  stripe_customer_id?: string
-}
+export type Customer = Database['public']['Tables']['customers']['Row']
 
-export type UserDetails = {
-  id: string
-  first_name: string
-  last_name: string
-  full_name?: string
-  avatar_url?: string
-  billing_address?: Stripe.Address
-  payment_method?: Stripe.PaymentMethod[Stripe.PaymentMethod.Type]
-}
+export type UserDetails = Database['public']['Tables']['users']['Row']
 
 export type ProductWithPrice = {
   prices?: Price[]
 } & Product
 
-export type Subscription = {
-  id: string
-  user_id: string
-  status?: Stripe.Subscription.Status
-  metadata?: Stripe.Metadata
-  price_id?: string
-  quantity?: number
-  cancel_at_period_end?: boolean
-  created: string
-  current_period_start: string
-  current_period_end: string
-  ended_at?: string
-  cancel_at?: string
-  canceled_at?: string
-  trial_start?: string
-  trial_end?: string
-  prices?: Price
-}
+export type Subscription = Database['public']['Tables']['subscriptions']['Row']
