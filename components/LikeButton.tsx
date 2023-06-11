@@ -19,7 +19,7 @@ export const LikeButton = ({ songId }: Props) => {
   const authModal = useAuthModal()
   const { user } = useUser()
 
-  const [isLiked, setIsLiked] = useState<boolean>(false)
+  const [isLiked, setIsLiked] = useState(false)
 
   useEffect(() => {
     if (!user?.id) {
@@ -79,14 +79,7 @@ export const LikeButton = ({ songId }: Props) => {
   }
 
   return (
-    <button
-      className="
-        cursor-pointer 
-        hover:opacity-75 
-        transition
-      "
-      onClick={handleLike}
-    >
+    <button className="cursor-pointer hover:opacity-75 transition" onClick={handleLike}>
       <Icon color={isLiked ? '#22c55e' : 'white'} size={25} />
     </button>
   )

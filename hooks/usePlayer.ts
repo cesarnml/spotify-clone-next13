@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 
-interface PlayerStore {
+type PlayerStore = {
   ids: string[]
   activeId?: string
   setId: (id: string) => void
