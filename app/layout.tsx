@@ -27,6 +27,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <UserContextProvider>
             <ModalProvider />
             <Sidebar songs={userSongs}>{children}</Sidebar>
+            <Player />
           </UserContextProvider>
         </SupabaseProvider>
       </body>

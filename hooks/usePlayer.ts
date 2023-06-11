@@ -11,7 +11,7 @@ type PlayerStore = {
 const usePlayer = create<PlayerStore>((set) => ({
   ids: [],
   activeId: undefined,
-  setId: (id: string) => set({ activeId: id }),
+  setId: (activeId: string) => set({ activeId }),
   setIds: (ids: string[]) => set({ ids }),
   reset: () => set({ ids: [], activeId: undefined }),
 }))
