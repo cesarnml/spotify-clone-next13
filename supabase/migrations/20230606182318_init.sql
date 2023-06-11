@@ -1,6 +1,3 @@
-CREATE TRIGGER on_auth_user_created AFTER INSERT ON auth.users FOR EACH ROW EXECUTE FUNCTION handle_new_user();
-
-
 create type "public"."pricing_plan_interval" as enum ('day', 'week', 'month', 'year');
 
 create type "public"."pricing_type" as enum ('one_time', 'recurring');
@@ -176,6 +173,8 @@ AS $function$
   end;
 $function$
 ;
+
+CREATE TRIGGER on_auth_user_created AFTER INSERT ON auth.users FOR EACH ROW EXECUTE FUNCTION handle_new_user();
 
 create policy "Enable delete for users based on user_id"
 on "public"."liked_songs"
