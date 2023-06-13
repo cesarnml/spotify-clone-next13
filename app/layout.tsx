@@ -6,6 +6,7 @@ import { ModalProvider } from '@/providers/ModalProvider'
 import { ToasterProvider } from '@/providers/ToasterProvider'
 import getSongsByUserId from '@/actions/getSongsByUserId'
 import './globals.css'
+import Player from '@/components/Player'
 
 const font = Figtree({ subsets: ['latin'] })
 

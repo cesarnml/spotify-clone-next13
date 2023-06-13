@@ -5,7 +5,7 @@ import { Song } from '@/app.types'
 
 const useSongById = (id?: string) => {
   const [isLoading, setIsLoading] = useState(false)
-  const [song, setSong] = useState<Song | undefined>(undefined)
+  const [song, setSong] = useState<Song>()
   const { supabaseClient } = useSessionContext()
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const useSongById = (id?: string) => {
 
       if (error) {
         setIsLoading(false)
-        return toast.error(error.message)
+        toast.error(error.message)
       }
 
       setSong(data as Song)
